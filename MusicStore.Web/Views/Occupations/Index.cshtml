@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MusicStore.Entities.Occupation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.Number)
+        </th>
+        <th>
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Album.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DayOfOccupation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OccupationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OccupationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OccupationId })
+        </td>
+    </tr>
+}
+
+</table>

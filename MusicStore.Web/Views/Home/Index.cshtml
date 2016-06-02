@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="img-responsive center-block" style="height: 400px;" src="~/Images/1.jpg" alt="Chania">
+        </div>
+
+        <div class="item">
+            <img class="img-responsive center-block" style="height: 400px;" src="~/Images/2.jpg" alt="Chania">
+        </div>
+
+        <div class="item">
+            <img class="img-responsive center-block" style="height: 400px;" src="~/Images/3.jpg" alt="Flower">
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Исполнители", "Index", "Artists")</h2>
+        <p>
+            Исполнитель – физическое лицо, творческим трудом которого создано исполнение.
+        </p>
+        @Html.ActionLink("Автоматизация", "Automatisation", "Albums")
+        @Html.ActionLink("Альбомы", "Index", "Albums")
+        @Html.ActionLink("Песни", "Index", "Songs")
+        @Html.ActionLink("Занятость", "Create", "Occupations")
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Продюсеры", "Index", "Producers")</h2>
+        <p>Продюсер — лицо, ответственное за надзор и разработку композиций (т.н. продакшн) музыкального исполнителя. В обязанности продюсера входят сбор идей для проекта, выбор песен и музыкантов, наставничество исполнителя и музыкантов по работе в музыкальной студии, контроль за записью и сведением композиций.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Залы", "Index", "Rooms")</h2>
+        <p>Зал — большое, как правило крытое помещение.</p>
+    </div>
+</div>

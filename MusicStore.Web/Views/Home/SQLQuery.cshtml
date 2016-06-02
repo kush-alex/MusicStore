@@ -1,0 +1,48 @@
+﻿@using MusicStore.Web.Controllers
+@model MusicStore.Web.Controllers.Query
+
+@{
+    ViewBag.Title = "SQLQuery";
+}
+
+@using (Html.BeginForm("SQLQuery"))
+{
+    <p>
+        <div class="form-horizontal">
+            <div class="col-md-10">
+                <h2>SQLQuery</h2>
+                @Html.TextBox("query", "", new { @class = "form-control" })   
+                <br>
+                <input type="submit" value="Query" class="btn btn-default" />
+                <br>
+            </div>
+            <div class="col-md-10">
+                
+            </div>
+        </div>
+
+</p>
+}
+
+<table class="table">
+    <tr>
+        @foreach (var item in Model.ColumnNamesList) { 
+        <th>
+            @item
+        </th>
+        }
+    </tr>
+
+    @foreach (var item in Model.TableContent)
+    {
+        <tr>
+            @foreach (var innerItem in item)
+            {
+            <td>
+                @innerItem
+            </td>
+            }
+        </tr>
+    }
+
+</table>

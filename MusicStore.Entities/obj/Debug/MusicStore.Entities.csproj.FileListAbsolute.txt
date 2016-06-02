@@ -1,0 +1,6 @@
+D:\Uni\c#\MusicStore\MusicStore.Entities\bin\Debug\MusicStore.Entities.dll
+D:\Uni\c#\MusicStore\MusicStore.Entities\bin\Debug\MusicStore.Entities.pdb
+D:\Uni\c#\MusicStore\MusicStore.Entities\obj\Debug\MusicStore.Entities.dll
+D:\Uni\c#\MusicStore\MusicStore.Entities\obj\Debug\MusicStore.Entities.pdb
+D:\Uni\c#\MusicStore\MusicStore.Entities\bin\Debug\MusicStore.Entities.dll.config
+D:\Uni\c#\MusicStore\MusicStore.Entities\obj\Debug\MusicStore.Entities.csprojResolveAssemblyReference.cache

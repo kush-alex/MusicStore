@@ -1,0 +1,49 @@
+﻿@model MusicStore.Entities.Occupation
+
+@{
+    ViewBag.Title = "SendEmail";
+}
+
+@using (Html.BeginForm("SendEmail", "Occupations", new { occupationId = Model.OccupationId }))
+{
+<div>
+    <h4>Accept</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Album.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Album.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.openingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.openingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfOccupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfOccupation)
+        </dd>
+        <dd>
+            @Html.TextBox("email", ViewBag.Email as string, new { @class = "form-control" })
+            <br>
+            <input type="submit" value="Отправить письмо" class="btn btn-default" />
+            <br>
+        </dd>
+
+    </dl>
+</div>
+}
+<p>
+    @*Html.ActionLink("Edit", "Edit", new { id = Model.OccupationId })*@
+    @Html.ActionLink("На главную", "Index","Home",null)
+</p>

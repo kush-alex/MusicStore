@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Owin.Security.Facebook</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext">
+      <summary>Предоставляет доступ к информации о проверке подлинности Facebook.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,Newtonsoft.Json.Linq.JObject,System.String,System.String)"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.AccessToken">
+      <summary>Получает или задает маркер доступа.</summary>
+      <returns>Маркер доступа.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Email">
+      <summary>Возвращает или задает адрес электронной почты, который используется для доступа к Facebook.</summary>
+      <returns>Адрес электронной почты, который используется для доступа к Facebook.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.ExpiresIn"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Id">
+      <summary>Получает или задает идентификатор, связанный с контекстом.</summary>
+      <returns>Идентификатор, связанный с контекстом.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Identity">
+      <summary>Получает или задает идентификатор этого экземпляра.</summary>
+      <returns>Идентификатор этого экземпляра.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Link">
+      <summary>Получает или задает ссылку на <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext" />.</summary>
+      <returns>Ссылка на <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext" />.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Name">
+      <summary>Получает или задает имя, связанное с контекстом.</summary>
+      <returns>Имя, связанное с контекстом.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Properties"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.User">
+      <summary>Получает или задает пользователя, который получает доступ к проверке подлинности.</summary>
+      <returns>Пользователь, который получает доступ к проверке подлинности.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.UserName"></member>
+    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware">
+      <summary>Представляет ПО промежуточного слоя для проверки подлинности Facebook.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware" />.</summary>
+      <param name="next">Переходит к следующему приложению.</param>
+      <param name="app">Приложение.</param>
+      <param name="options">Параметры проверки подлинности Facebook.</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware.CreateHandler">
+      <summary>Создает обработчик проверки подлинности.</summary>
+      <returns>Обработчик проверки подлинности.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions">
+      <summary>Предоставляет параметры для проверки подлинности Facebook.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions" />.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.AppId">
+      <summary>Получает или задает идентификатор приложения.</summary>
+      <returns>Идентификатор приложения.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.AppSecret">
+      <summary>Получает или задает секрет приложения.</summary>
+      <returns>Секрет приложения.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelCertificateValidator"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelHttpHandler"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelTimeout"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.CallbackPath"></member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Caption">
+      <summary>Получает или задает текстовую подпись, отображаемую в приложении.</summary>
+      <returns>Текстовая подпись, отображаемая в приложении.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Provider">
+      <summary>Получает или задает поставщик проверки подлинности.</summary>
+      <returns>Поставщик проверки подлинности.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Scope">
+      <summary>Получает или задает область, связанную с проверкой подлинности.</summary>
+      <returns>Область, связанная с проверкой подлинности.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.SignInAsAuthenticationType">
+      <summary>Получает или задает строку, которая представляет тип проверки подлинности, используемой для входа.</summary>
+      <returns>Строка, которая представляет тип проверки подлинности, используемой для входа.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.StateDataFormat"></member>
+    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider">
+      <summary>Представляет поставщик проверки подлинности Facebook.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider" />.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext)">
+      <summary>Указывает Facebook после успешного прохождения проверки подлинности.</summary>
+      <returns>Задача, выполняющая проверку подлинности.</returns>
+      <param name="context">Контекст.</param>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.OnAuthenticated">
+      <summary>Получает или задает событие OnAuthenticated.</summary>
+      <returns>Событие OnAuthenticated.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.OnReturnEndpoint">
+      <summary>Получает или задает событие OnReturnEndpoint.</summary>
+      <returns>Событие OnReturnEndpoint.</returns>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext)">
+      <summary>Возвращает конечную точку Facebook.</summary>
+      <returns>Задача, выполняющая обработку возврата конечной точки.</returns>
+      <param name="context">Контекст.</param>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext">
+      <summary>Представляет контекст возвращаемой конечной точки для свойств Facebook.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)"></member>
+    <member name="T:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider">
+      <summary>Предоставляет контекст Facebook для проверки подлинности.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext)">
+      <summary>Определяет контекст, прошедший проверку подлинности.</summary>
+      <returns>Контекст, прошедший проверку подлинности.</returns>
+      <param name="context">Контекст, подлинность которого проверяется.</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext)">
+      <summary>Возвращает контекст конечной точки Facebook.</summary>
+      <returns>Контекст конечной точки Facebook.</returns>
+      <param name="context">Контекст конечной точки.</param>
+    </member>
+    <member name="T:Owin.FacebookAuthenticationExtensions">
+      <summary>Предоставляет методы расширения для проверки подлинности Facebook.</summary>
+    </member>
+    <member name="M:Owin.FacebookAuthenticationExtensions.UseFacebookAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions)">
+      <summary>Формирует проверку подлинности Facebook для приложения OWIN.</summary>
+      <returns>
+        <see cref="T:Owin.IAppBuilder" />, создающий проверку подлинности.</returns>
+      <param name="app">Построитель приложений.</param>
+      <param name="options">Параметры проверки подлинности Facebook.</param>
+    </member>
+    <member name="M:Owin.FacebookAuthenticationExtensions.UseFacebookAuthentication(Owin.IAppBuilder,System.String,System.String)">
+      <summary>Формирует проверку подлинности Facebook для приложения OWIN.</summary>
+      <returns>
+        <see cref="T:Owin.IAppBuilder" />, создающий проверку подлинности.</returns>
+      <param name="app">Построитель приложений.</param>
+      <param name="appId">Идентификатор приложения.</param>
+      <param name="appSecret">Секрет приложения.</param>
+    </member>
+  </members>
+</doc>

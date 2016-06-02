@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MusicStore.Entities.Artist>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Введите имя исполнителя: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+    <p>
+        Вывести исполнителей с годом рождения от: @Html.TextBox("YearFrom") до @Html.TextBox("YearTo")
+        <input type="submit" id="AccidentYear" value="Filter" />
+        @Html.ValidationMessage("AccidentYear")
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm,searchString=ViewBag.Search,YearFrom=ViewBag.YearFrom,YearTo=ViewBag.YearTo })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearOfBeginning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearOfBeginning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArtistId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArtistId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArtistId })
+        </td>
+    </tr>
+}
+
+</table>

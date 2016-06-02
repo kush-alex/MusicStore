@@ -1,0 +1,50 @@
+﻿@using MusicStore.Web.Controllers
+@model MusicStore.Web.Controllers.Query
+
+@{
+    ViewBag.Title = "SQLQueryDefault";
+}
+
+@using (Html.BeginForm("SQLQueryDef"))
+{<p>
+        <div class="form-horizontal">
+            <div class="col-md-10">
+                Defaul select: 
+                <select name="lol">
+                    <option value="select * from artists">select * from artists</option>
+                    <option value="select * from albums">select * from albums</option>
+                    <option value="select albums.name,artists.name from artists,albums where artists.artistId=albums.artistid">select albums.name,artists.name from artists,album where artists.artist.artistId=albums.album.artistid</option>
+                </select>
+                <br>
+                <input type="submit" value="DefaultQuery" class="btn btn-default" />
+                <br>
+            </div>
+            <div class="col-md-10">
+
+            </div>
+        </div>
+
+    </p>
+}
+<table class="table">
+    <tr>
+        @foreach (var item in Model.ColumnNamesList) { 
+        <th>
+            @item
+        </th>
+        }
+    </tr>
+
+    @foreach (var item in Model.TableContent)
+    {
+        <tr>
+            @foreach (var innerItem in item)
+            {
+            <td>
+                @innerItem
+            </td>
+            }
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Owin.Security.Google</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext">
+      <summary>Представляет контекст Google, прошедший проверку подлинности.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,System.Security.Claims.ClaimsIdentity,Microsoft.Owin.Security.AuthenticationProperties,System.Xml.Linq.XElement,System.Collections.Generic.IDictionary{System.String,System.String})"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext.AttributeExchangeProperties">
+      <summary>Получает или задает свойства для контекста обмена атрибутов.</summary>
+      <returns>Свойства для контекста обмена атрибутов.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext.Identity">
+      <summary>Получает или задает идентификатор утверждений, связанный с контекстом.</summary>
+      <returns>Идентификатор утверждений, связанный с контекстом.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext.Properties"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticatedContext.ResponseMessage">
+      <summary>Получает или задает сообщение ответа проверки подлинности.</summary>
+      <returns>Сообщение ответа проверки подлинности.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Google.GoogleAuthenticationMiddleware">
+      <summary>Представляет ПО промежуточного слоя для проверки подлинности Google.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Google.GoogleAuthenticationOptions)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Google.GoogleAuthenticationMiddleware" />.</summary>
+      <param name="next">Следующее приложение, подлинность которого следует проверить.</param>
+      <param name="app">Построитель приложений.</param>
+      <param name="options">Параметры проверки подлинности.</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationMiddleware.CreateHandler">
+      <summary>Создает обработчик проверки подлинности для данного ПО промежуточного слоя.</summary>
+      <returns>Созданный <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1" />.</returns>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions">
+      <summary>Представляет параметры проверки подлинности Google.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions" />.</summary>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.BackchannelCertificateValidator"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.BackchannelHttpHandler"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.BackchannelTimeout"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.CallbackPath"></member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.Caption">
+      <summary>Получает или задает подпись, используемую для проверки подлинности.</summary>
+      <returns>Подпись, используемая для проверки подлинности.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.Provider">
+      <summary>Получает или задает поставщик проверки подлинности Google.</summary>
+      <returns>Поставщик проверки подлинности Google.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.SignInAsAuthenticationType">
+      <summary>Получает или задает тип проверки подлинности, используемой при входе в Google.</summary>
+      <returns>Тип проверки подлинности, используемой при входе в Google.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationOptions.StateDataFormat"></member>
+    <member name="T:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider">
+      <summary>Представляет поставщик проверки подлинности Google.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider" />.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Google.GoogleAuthenticatedContext)">
+      <summary>Указывает заданный контекст, прошедший проверку подлинности.</summary>
+      <returns>Задача, представляющая операцию для проверки подлинности контекста.</returns>
+      <param name="context">Контекст Google, прошедший проверку подлинности.</param>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider.OnAuthenticated">
+      <summary>Получает или задает функцию, которая вызывает событие Authenticated.</summary>
+      <returns>Функция, которая вызывает событие Authenticated.</returns>
+    </member>
+    <member name="P:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider.OnReturnEndpoint">
+      <summary>Получает или задает функцию, которая вызывает событие ReturnEndpoint.</summary>
+      <returns>Функция, которая вызывает событие ReturnEndpoint.</returns>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Google.GoogleReturnEndpointContext)">
+      <summary>Указывает заданный контекст возвращаемой конечной точки.</summary>
+      <returns>Задача, обрабатывающая возвращаемую конечную точку.</returns>
+      <param name="context">Контекст возвращаемой конечной точки Google.</param>
+    </member>
+    <member name="T:Microsoft.Owin.Security.Google.GoogleReturnEndpointContext">
+      <summary>Представляет контекст возвращаемой конечной точки Google.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.GoogleReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)"></member>
+    <member name="T:Microsoft.Owin.Security.Google.IGoogleAuthenticationProvider">
+      <summary>Предоставляет интерфейс для поставщика проверки подлинности Google.</summary>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.IGoogleAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Google.GoogleAuthenticatedContext)">
+      <summary>Указывает заданный контекст, прошедший проверку подлинности.</summary>
+      <returns>Задача, представляющая операцию для проверки подлинности контекста.</returns>
+      <param name="context">Контекст Google, прошедший проверку подлинности.</param>
+    </member>
+    <member name="M:Microsoft.Owin.Security.Google.IGoogleAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Google.GoogleReturnEndpointContext)">
+      <summary>Указывает заданный контекст возвращаемой конечной точки.</summary>
+      <returns>Задача, обрабатывающая возвращаемую конечную точку.</returns>
+      <param name="context">Контекст возвращаемой конечной точки Google.</param>
+    </member>
+    <member name="T:Owin.GoogleAuthenticationExtensions">
+      <summary>Представляет методы расширения для проверки подлинности Google.</summary>
+    </member>
+    <member name="M:Owin.GoogleAuthenticationExtensions.UseGoogleAuthentication(Owin.IAppBuilder)">
+      <summary>Вызывается после того, как ПО промежуточного слоя использует проверку подлинности Google.</summary>
+      <returns>Проверка подлинности Google.</returns>
+      <param name="app">Построитель приложений.</param>
+    </member>
+    <member name="M:Owin.GoogleAuthenticationExtensions.UseGoogleAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Google.GoogleAuthenticationOptions)">
+      <summary>Вызывается после того, как ПО промежуточного слоя использует проверку подлинности Google.</summary>
+      <returns>Проверка подлинности Google.</returns>
+      <param name="app">Построитель приложений.</param>
+      <param name="options">Параметры проверки подлинности Google.</param>
+    </member>
+  </members>
+</doc>

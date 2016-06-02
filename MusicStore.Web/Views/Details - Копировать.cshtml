@@ -1,0 +1,76 @@
+﻿@model MusicStore.Entities.Artist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfBeginning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfBeginning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Albums)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Album</th>
+                    <th>Circulation</th>
+                    <th>Cost</th>
+                </tr>
+                @foreach (var item in Model.Albums)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(item.Name, "Details","Albums", new { id = item.AlbumId },null)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Circulation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cost)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "EditAlbum","Albums", new { id = item.AlbumId },null) |
+                            @Html.ActionLink("Details", "Details", "Albums", new { id = item.AlbumId }, null) |
+                            @Html.ActionLink("Delete", "Delete","Albums" ,new { id = item.AlbumId },null)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </dd>
+    </dl>
+    <p>
+        @Html.ActionLink("Create", "CreateAlbum", new { id = Model.ArtistId })
+    </p>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

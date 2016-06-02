@@ -1,0 +1,91 @@
+﻿@model MusicStore.Entities.Artist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Artist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearOfBeginning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearOfBeginning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            Альбомы
+        </dt>
+        <dd>
+            <table class="table">
+                  <tr>
+        
+                      <th>
+                      Название альбома
+                     </th>
+                     <th>
+                      Тираж
+                       </th>
+                    <th>
+                       Стоимость альбома
+                  </th>
+                  <th>
+                      Дата выхода
+                   </th>
+                   </tr>
+    @foreach (var item in Model.Albums)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Circulation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Albums", new { id = item.AlbumId }, null) |
+                @Html.ActionLink("Details", "Details", "Albums", new { id = item.AlbumId }, null) |
+                @Html.ActionLink("Delete", "Delete", "Album", new { id = item.AlbumId }, null)
+            </td>
+        </tr>
+    }
+
+</table>
+            </dd>
+        <dd>
+            @using (Html.BeginForm("Details", "Artists", new { id = Model.ArtistId, createReport = true }, FormMethod.Post, new { target = "_blank" }))
+            {<input class="btn btn-default" type="submit" value="Show artist info">}
+        </dd>
+        
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

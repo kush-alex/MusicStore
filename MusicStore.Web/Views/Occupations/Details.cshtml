@@ -1,0 +1,42 @@
+﻿@model MusicStore.Entities.Occupation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Occupation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Album.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Album.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room.openingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room.openingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DayOfOccupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DayOfOccupation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OccupationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

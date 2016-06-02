@@ -1,0 +1,70 @@
+﻿@model MusicStore.Entities.Room
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.openingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.openingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.closingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.closingTime)
+        </dd>
+        <dt>
+            Занятые даты    
+        </dt>
+        @foreach (var item in Model.Occupations.Where(a=>a.DayOfOccupation>=DateTime.Now))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayOfOccupation)
+                    <br>
+                </td>
+            </tr>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
